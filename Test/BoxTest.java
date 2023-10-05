@@ -6,8 +6,9 @@ class BoxTest {
     * I added a method in the box class (getBoxContents) that returns the ArrayList allowing for better testing
     */
 
+    //testing Box class constructor
     @org.junit.jupiter.api.Test
-    void boxConstructor(){
+    public void boxConstructor(){
 
         //test constructor with negative double args
         assertThrows(IllegalArgumentException.class,
@@ -24,8 +25,9 @@ class BoxTest {
 
     }
 
+    //testing volume method
     @org.junit.jupiter.api.Test
-    void volume() {
+    public void volume() {
         Box test = new Box(5, 5, 10);
         Box test2 = new Box(5, 5, 1.5);
 
@@ -35,8 +37,9 @@ class BoxTest {
 
     }
 
+    //testing addItem method
     @org.junit.jupiter.api.Test
-    void addItem() {
+    public void addItem() {
         Box test = new Box(5, 5, 10);
         test.addItem("baseball");
         test.addItem("basketball");
@@ -67,8 +70,9 @@ class BoxTest {
 
     }
 
+    //testing removeItem method
     @org.junit.jupiter.api.Test
-    void removeItem() {
+    public void removeItem() {
 
         Box test = new Box(5, 5, 10);
         test.addItem("baseball");
