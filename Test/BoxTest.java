@@ -50,10 +50,24 @@ class BoxTest {
         test.addItem("baseball");
         test.addItem("basketball");
         test.addItem("football");
-        test.addItem("football");
+
+        //test hasRoom for a box with 9 items
+        assertTrue(test.hasRoom());
+
+        //test the first item added to the box (baseball)
+        assertEquals("baseball", test.getBoxContents().get(0));
+
+        //test adding an item before the box is full
+        assertTrue(test.addItem("football"));
 
         //test the current size of the ArrayList
         assertEquals(10, test.getBoxContents().size());
+
+        //test hasRoom for a box with 10 items
+        assertFalse(test.hasRoom());
+
+        //test adding an 11th item
+        assertFalse(test.addItem("football"));
 
         //test a blank string entry
         assertThrows(IllegalArgumentException.class,
@@ -62,12 +76,6 @@ class BoxTest {
         //test a null string entry
         assertThrows(IllegalArgumentException.class,
                 () -> test.addItem(null));
-
-        //test the first item added to the box (baseball)
-        assertEquals("baseball", test.getBoxContents().get(0));
-
-
-
     }
 
     //testing removeItem method
@@ -85,16 +93,14 @@ class BoxTest {
         //remove basketball from the box
         test.removeItem("basketball");
 
+        //check boxContents to see if basketball is still there
+        assertFalse(test.getBoxContents().contains("basketball"));
+
         //test the size after one item gets removed
         assertEquals(2, test.getBoxContents().size());
 
         //test the index of football after basketball gets deleted
         assertEquals("football", test.getBoxContents().get(1));
-
-        //check boxContents to see if basketball is still there
-        assertEquals(false, test.getBoxContents().contains("basketball"));
-
-
     }
 
 }

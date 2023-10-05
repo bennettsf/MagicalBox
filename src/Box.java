@@ -19,15 +19,21 @@ class Box {
         return width * depth * height;
     }
 
-    public void addItem(String item) {
+    public boolean hasRoom(){
+        return boxContents.size() < 10;
+    }
+
+    public boolean addItem(String item) {
         if (item == null || item.isBlank()){
             throw new IllegalArgumentException("item must not be null or blank/empty");
         }
 
-        if (boxContents.size() < 10) {
+        if (hasRoom()) {
             boxContents.add(item.toLowerCase());
+            return true;
         } else {
             System.out.println("The box is already full! Remove an item first.");
+            return false;
         }
     }
 
