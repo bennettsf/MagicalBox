@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="MagicalBox">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/MagicalBox.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
